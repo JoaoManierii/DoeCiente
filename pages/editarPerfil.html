@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Cabeçalho da página, incluindo links CSS e outros metadados -->
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>Editar Perfil</h1>
+    </header>
+
+    <!-- Formulário de edição de perfil -->
+    <main>
+        <form action="processar_edicao_perfil.php" method="POST" enctype="multipart/form-data">
+            <label for="profile-picture">Foto de Perfil:</label>
+            <input type="file" id="profile-picture" name="profile-picture">
+            
+            <!-- Outros campos de perfil, como nome, e-mail, etc. -->
+            
+            <button type="submit">Salvar Alterações</button>
+        </form>
+        
+        <form action="excluir_conta.php" method="POST">
+            <button type="submit">Excluir Conta</button>
+        </form>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <!-- Links ou informações de rodapé -->
+    </footer>
+</body>
+</html>

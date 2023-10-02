@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário - DoeCiente</title>
+    <!-- Adicione seu link para o arquivo CSS aqui, se necessário -->
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao DoeCiente</h1>
+    </header>
+
+    <main>
+        <section id="registration-form">
+            <h2>Cadastro de Usuário</h2>
+            <form action="processar_cadastro.php" method="POST">
+                <label for="name">Nome Completo:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+        
+        <section id="login-link">
+            <p>Já possui uma conta? <a href="login.html">Faça login</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Adicione informações de contato ou links úteis aqui -->
+    </footer>
+</body>
+</html>
