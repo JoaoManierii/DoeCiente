@@ -24,6 +24,8 @@
     text-align: center;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%; 
+    
 }
 
 .card img {
@@ -32,12 +34,12 @@
     align-items: center;
     max-width: 100%;
     height: auto;
-}
+    display: block; 
+    margin: 0 auto; 
+    background-color: white;
 
-.card-image {
-    max-width: auto;
-    height: auto;
-}
+    }
+    
 
 .card-title {
     font-size: 18px;
@@ -53,11 +55,13 @@
 @media screen and (max-width: 768px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
+        margin-top: 40px; 
     }
 }
 
 @media screen and (max-width: 576px) {
     .container {
         grid-template-columns: 1fr;
+        margin-top: 40px; 
     }
 }
