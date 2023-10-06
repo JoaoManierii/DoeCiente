@@ -49,22 +49,7 @@
     margin-top: 10px;
 }
 
-/* Estilo para o botão "Doar" */
-.doar-button {
-    background-color: #007BFF; /* Cor de fundo */
-    color: #fff; /* Cor do texto */
-    border: none; /* Remova a borda */
-    padding: 10px 20px; /* Espaçamento interno */
-    border-radius: 5px; /* Borda arredondada */
-    cursor: pointer; /* Cursor de mão ao passar o mouse */
-    display: block; /* Tornar o botão um bloco para centralizá-lo */
-    margin: 0 auto; /* Centralizar horizontalmente */
-    margin-top: 10px; /* Adicionar margem superior para separar do texto */
-}
 
-.doar-button:hover {
-    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
-}
 
 
 @media screen and (max-width: 768px) {
