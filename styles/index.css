@@ -1,3 +1,112 @@
-@import 'st/header.css';
-@import 'st/footer.css';
-@import 'st/tema.css';
+.banner {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center; 
+    background-color: lightgreen;
+}
+
+.a {
+    display: inline-block;
+    width: 25%; 
+    margin-right: 5%; 
+    vertical-align: top; 
+}
+
+.a:last-child {
+    margin-right: 0; 
+}
+
+.b {
+    background-color: aqua;
+}
+
+.grid_4,
+.grid_5,
+.grid_9 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.img_inner {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilos para os botões */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+/* Para as imagens na seção "Our Campaigns" */
+.card_index li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.card_index img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card_index div {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Estilos para a seção "Stay Informed" */
+#newsletter {
+    text-align: center;
+}
+
+.email {
+    display: block;
+    margin: 10px 0;
+}
+
+.button {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+.btn {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Estilos para a seção "Stay Connected" */
+.socials {
+    margin-top: 10px;
+}
+
+.fa {
+    font-size: 24px;
+    margin: 0 5px;
+}
