@@ -1,4 +1,6 @@
-@import url(basic.css);
+@import 'st/header.css';
+@import 'st/footer.css';
+@import 'st/tema.css';
 
 .form-check-label a {
     color: black; 

@@ -1,1 +1,8 @@
-@import url(basic.css);
+@import 'st/header.css';
+@import 'st/footer.css';
+@import 'st/tema.css';
+
+
+body{
+    color: black;
+}
