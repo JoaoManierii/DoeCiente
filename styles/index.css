@@ -41,7 +41,7 @@
 .container a.btn {
     display: inline-block;
     padding: 5px 10px;
-    background-color: lightgreen;
+    background-color: #8ebd8e;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -58,12 +58,16 @@
     margin-bottom: 20px; /
   }
   
+    .noticias ul.list li {
+    display: flex;  
+    margin-bottom: 20px; /
+  }
   
   .noticias ul.list li time {
     font-size: 24px;
     font-weight: bold;
     margin-right: 10px;
-    background-color: green; 
+    background-color: #8ebd8e;
     color: white; 
     padding: 5px; 
   }
@@ -78,6 +82,11 @@
 .noticias ul.list li .extra_noticias {
     font-size: 18px; 
   }
+  .noticias ul.list li .extra_noticias a {
+    font-style: italic;
+    text-decoration: none;
+    color: #8ebd8e;
+  }
 
 .testemunha {
     background-color: aqua;
@@ -86,7 +95,7 @@
   .noticias blockquote .title {
     font-size: 24px;
     font-weight: bold;
-    background-color: green;
+    background-color: #8ebd8e;
     color: white;
     padding: 10px;
   }
@@ -117,7 +126,6 @@
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    background-color: var(--fundo-3);
     box-shadow: var(--box-shadow);
     max-width: 100%; 
 
@@ -146,10 +154,70 @@
     padding: 10px;
 }
 
-/* Grid de imagens à direita */
 .imagens-container {
     float: left;
     width: 60%; 
     padding: 10px;
 }
+
+.newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.separator {
+    width: 2px; 
+    height: 100%;
+    border-bottom: 150px solid white;
+    margin: 0 120px; 
+}
+
+
+.newsletter .form-control {
+    border-radius: 25px;
+    padding: 5px 15px;
   
+}
+
+.newsletter .btn {
+    background-color: #007bff;
+    color: white;
+    border-radius: 25px;
+    padding: 5px 20px;
+    margin-left: 10px;
+}
+
+.enviar-button {
+  background-color: #8ebd8e; 
+  color: #fff; 
+  border-radius: 2px;
+  padding: 5px 20px;
+  margin-left: 100px; 
+}
+
+.newsletter .socials {
+    display: flex;
+    width: 200px;
+}
+
+.newsletter .socials a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+}
+
+.newsletter .socials a:hover {
+    color: #007bff;
+}
+
+.newsletter .socials .fa {
+    font-size: 24px;
+    border: 2px solid  #8ebd8e; 
+    background-color:  #8ebd8e;
+    padding: 10px; 
+    color: #fff; 
+  }
