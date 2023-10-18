@@ -88,10 +88,6 @@
     color: #8ebd8e;
   }
 
-.testemunha {
-    background-color: aqua;
-  }
-
   .noticias blockquote .title {
     font-size: 24px;
     font-weight: bold;
@@ -101,13 +97,11 @@
   }
   
   .noticias blockquote p {
-    font-size: 18px;
     background-color: #f1f1f1;
     padding: 10px;
   }
   
   .noticias blockquote div {
-    font-size: 16px;
     background-color: #ccc;
     padding: 10px;
   }
@@ -142,9 +136,6 @@
     display: block; 
     margin: 0 auto; 
     border-radius: 10px;
-    padding: 1-10px;
-    z-index: 11;
-
     border: var(--border-padrao);
 }
    
