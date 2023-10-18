@@ -140,4 +140,16 @@
     border: var(--border-padrao);
 }
    
+.noticias-container {
+    float: left;
+    width: 40%; 
+    padding: 10px;
+}
+
+/* Grid de imagens à direita */
+.imagens-container {
+    float: left;
+    width: 60%; 
+    padding: 10px;
+}
   
