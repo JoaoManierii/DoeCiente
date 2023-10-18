@@ -1,3 +1,7 @@
+@import 'st/header.css';
+@import 'st/footer.css';
+@import 'st/tema.css';
+
 .banner {
     display: flex;
     justify-content: center;
@@ -79,11 +83,6 @@
     background-color: aqua;
   }
 
-.noticias blockquote {
-  
-  }
-  
-
   .noticias blockquote .title {
     font-size: 24px;
     font-weight: bold;
@@ -104,7 +103,6 @@
     padding: 10px;
   }
   
-
   .grid_alvo {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -113,45 +111,33 @@
     height: fit-content;
     padding-bottom: 10px;
   }
-    /* Adicione um fundo cinza para as imagens */
-    .card_index li {
-        background-color: #f2f2f2;
-        padding: 10px;
-    }
 
-    /* Estilize as imagens para ocupar todo o espaço disponível na célula */
-    .card_index img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Redimensiona a imagem para preencher o espaço */
-    }
+  .card_index {
+    border: 1px solid var(--border-padrao);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--fundo-3);
+    box-shadow: var(--box-shadow);
+    max-width: 100%; 
 
-    /* Centralize o texto dentro da célula */
-    .card_index div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-
-    /* Estilize o texto */
-    .card_index span {
-        font-size: 18px;
-        font-weight: bold;
-    }
 }
 
-/* Estilize os links para remover sublinhado e aplicar efeito de hover */
-.card_index a {
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s;
-}
+.card_index img {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    image-rendering: optimizeSpeed;
+    max-width: fit-content;
+    height: fit-content;
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 10px;
+    padding: 1-10px;
+    z-index: 11;
 
-.card_index a:hover {
-    transform: scale(1.05);
+    border: var(--border-padrao);
 }
-
-  
-  
+   
   
