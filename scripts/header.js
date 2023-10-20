@@ -139,7 +139,7 @@ function loadMenuUsuario(){
         //     }
         // });
         dados.loggedin = false;
-        location.href=basedir;
+        location.href=basedir+"pages/index.html";
     });
 
     contentUsuario.appendChild(logout);

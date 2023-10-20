@@ -59,13 +59,18 @@
 .banner h1{
   text-wrap: wrap;
   word-wrap: normal;
-  color: #007bff;
+  color: var(--font-title-color);
 }
 
 .banner p{
   text-wrap: wrap;
   word-wrap: normal;
   color: whitesmoke;
+}
+
+.banner a{
+  color: var(--font-title-color);
+  font-weight: bold;
 }
 
 .active{
