@@ -12,7 +12,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -79,7 +79,7 @@ header {
 
 .logo:hover .logo-title{	
     display: flex;
-    animation: logoanimation 10s alternate infinite;
+    animation: logoanimation 3s alternate infinite;
 }
 
 @keyframes logoanimation {
@@ -177,6 +177,7 @@ header {
 }
 
 @media screen and (max-width: 600px) {
+
 
     .header-content{
         flex-direction: column;

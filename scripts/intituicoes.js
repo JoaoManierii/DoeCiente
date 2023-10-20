@@ -34,8 +34,8 @@ var cardInfos = [
 
 document.addEventListener("DOMContentLoaded", () =>{
     cardCreator();
+    
     var btnFiltro = document.querySelector(".btnFiltro");
-    console.log(btnFiltro)
     btnFiltro.addEventListener('click', () =>{
         filtroInstituicao();
 
@@ -77,9 +77,9 @@ function cardCreator(){
 
 function filtroInstituicao(){
     var filtro = document.querySelector("#instituicao-input");
+    var container = document.querySelector(".container");
     if(filtro.value != ""){
         var cards = document.querySelectorAll(".card");
-        var container = document.querySelector(".container");
         var cardsFiltrados = [];
         
 
@@ -96,5 +96,8 @@ function filtroInstituicao(){
         for(let i =0;i<cardsFiltrados.length;i++){
             container.appendChild(cardsFiltrados[i]);
         }
+    }else{
+        container.innerHTML = "";
+        cardCreator();
     }
 }

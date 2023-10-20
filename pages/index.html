@@ -5,26 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoeCiente</title>
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../scripts/commum.js"></script>
     <script src="../scripts/header.js"></script>
     <script src="../scripts/footer.js"></script>
+    <script src="../scripts/indexScript.js"></script>
 </head>
 
 <body>
-    <header class="header">
+    <header>
     </header>
     <main>
+        <section class="outdoor">
+            <div class="outdoor-container">
+                <div class="banner active">
+                    <img src="../imagens/th6.jpg" alt="Banner 1">
+                    <div class="banner_descricao">
+                        <h1>Titulo do anuncio</h1>
+                        <p>Descricao do anuncio Descricao do anuncioDescricao do anuncioDescricao do anuncio<a href="">
+                                Saiba mais...</a></p>
+                    </div>
+                </div>
+                <div class="banner">
+                    <img src="../imagens/th2.jpg" alt="Banner 2">
+                    <div class="banner_descricao">
 
-        <div>
-            <div class="banner">
-                <img src="imagens/big3.jpg" alt="">
+                        <h1>Titulo do anuncio</h1>
+                        <p>Descricao do anuncio Descricao do anuncioDescricao do anuncioDescricao do anuncio<a href="">
+                                Saiba mais...</a></p>
+                    </div>
+                </div>
+                <div class="banner">
+                    <img src="../imagens/th9.jpg" alt="Banner 3">
+                    <div class="banner_descricao">
+
+                        <h1>Titulo do anuncio</h1>
+                        <p>Descricao do anuncio Descricao do anuncioDescricao do anuncioDescricao do anuncio<a href="">
+                                Saiba mais...</a></p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="container">
-
+        </section>
+        <section class="container">
             <div class="time">
                 <h2>Nossa Missao</h2>
                 <div>
@@ -39,14 +63,13 @@
             </div>
             <div class="time">
                 <h2>Conheca Nosso Time</h2>
-                <img src="imagens/page1_img1.jpg" alt="">
+                <img src="../imagens/page1_img1.jpg" alt="">
                 <div>
                     <a href="pages/sobre.html" class="btn">Saber mais</a>
                 </div>
             </div>
-        </div>
-        <hr>
-        <div>
+        </section>
+        <section class="secao_main">
             <div class="noticias-container">
                 <div class="noticias">
                     <h2>Ultimas noticias</h2>
@@ -88,107 +111,103 @@
                         </li>
 
                     </ul>
-                    <div class="testemunha">
-                        <blockquote>
-                            <div class="title">Doacao MSF</div>
-                            <p>Fiz minha doacao solidaria para o Medico Sem Fronteiras de forma pratica e facil !</p>
-                            <div>Doador Anonimo</div>
-                        </blockquote>
-                    </div>
+
                 </div>
             </div>
             <div class="imagens-container">
                 <h2>Ajude pessoas reais</h2>
-                <div class="grid_alvo">
+                <div class="imagens-content">
                     <div class="card_index">
                         <a href="#">
-                            <img src="imagens/th1.jpg" alt="" />
+                            <img src="../imagens/th1.jpg" alt="" />
                         </a>
                     </div>
                     <div class="card_index">
                         <a href="#">
-                            <img src="imagens/th2.jpg" alt="" />
+                            <img src="../imagens/th2.jpg" alt="" />
                         </a>
                     </div>
                     <div class="card_index">
                         <a href="#">
-                            <img src="imagens/th3.jpg" alt="" />
+                            <img src="../imagens/th3.jpg" alt="" />
                         </a>
                     </div>
                     <div class="card_index">
                         <a href="#">
-                            <img src="imagens/th4.jpg" alt="" />
+                            <img src="../imagens/th4.jpg" alt="" />
                         </a>
                     </div>
                     <div class="card_index">
                         <a href="#">
-                            <img src="imagens/th5.jpg" alt="" />
+                            <img src="../imagens/th5.jpg" alt="" />
                         </a>
                     </div>
                     <div class="card_index">
                         <a href="#">
-                            <img src="imagens/th6.jpg" alt="" />
+                            <img src="../imagens/th6.jpg" alt="" />
                         </a>
                     </div>
                     <div class="card_index">
                         <a href="#">
-                            <img src="imagens/th7.jpg" alt="" />
+                            <img src="../imagens/th7.jpg" alt="" />
                         </a>
                     </div>
                     <div class="card_index">
                         <a href="#">
-                            <img src="imagens/th8.jpg" alt="" />
+                            <img src="../imagens/th8.jpg" alt="" />
                         </a>
                     </div>
                     <div class="card_index">
                         <a href="#">
-                            <img src="imagens/th9.jpg" alt="" />
+                            <img src="../imagens/th9.jpg" alt="" />
                         </a>
                     </div>
                 </div>
+
             </div>
+        </section>
+        <div class="comentarios">
         </div>
-        <hr>
+
+        <section>
+
         <div class="newsletter">
-            <div class="">
-                <h3>Fique informado</h3>
-                <div>Se inscreva na nossa Newsletter</div>
-                <form>
-                    <div>
-                        <label class="email">
-                            <input type="email" placeholder="Preencha seu Email">
-                        </label>
-                    </div>
-                    <button class="enviar-button">Enviar</button>
-                </form>
-            </div>
-
-            <div class="separator"></div>
-
-            <div class="siga">
-                <h3>Permaneca Conectado</h3>
-                <div>Siga nas redes sociais</div>
-                <div class="socials">
-                    <a href="#">
-                        <div class="fa fa-twitter"></div>
-                    </a>
-                    <a href="#">
-                        <div class="fa fa-facebook"></div>
-                    </a>
-                    <a href="#">
-                        <div class="fa fa-pinterest-square"></div>
-                    </a>
-                    <a href="#">
-                        <div class="fa fa-google-plus"></div>
-                    </a>
-                    <a href="#">
-                        <div class="fa fa-instagram"></div>
-                    </a>
+            <h3>Fique informado</h3>
+            <div>Se inscreva na nossa Newsletter</div>
+            <form>
+                <div>
+                    <label class="email">
+                        <input type="email" placeholder="Preencha seu Email">
+                    </label>
                 </div>
+                <button class="enviar-button">Enviar</button>
+            </form>
+        </div>
+
+
+        <div class="redesSociais">
+            <h3>Permaneca Conectado</h3>
+            <div>Siga nas redes sociais</div>
+            <div class="socials">
+                <a href="#">
+                    <div class="fa fa-twitter"></div>
+                </a>
+                <a href="#">
+                    <div class="fa fa-facebook"></div>
+                </a>
+                <a href="#">
+                    <div class="fa fa-pinterest-square"></div>
+                </a>
+                <a href="#">
+                    <div class="fa fa-google-plus"></div>
+                </a>
+                <a href="#">
+                    <div class="fa fa-instagram"></div>
+                </a>
             </div>
         </div>
-        </div>
-        </div>
+    </section>
+
     </main>
 
     <footer>

@@ -39,11 +39,7 @@
 }
 
 body{
-    /* background-image: var( --fundo-image-1); */
     background-color: var(--fundo-t-1);
-    background-size: cover ;
-    background-position: center;
-    background-repeat: no-repeat;
     margin: 0;
     min-height: 100vh;
     font-family: var(--font-family);
@@ -53,6 +49,8 @@ body{
 
 main{
     min-height: 100vh;
+    max-width: 100vw;
+
 }
 
 @keyframes shadow-animada {

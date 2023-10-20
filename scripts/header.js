@@ -24,7 +24,7 @@ class HeaderCreator{
         this.logo = document.createElement("div");
         this.logo.classList.add("logo");
         this.logo.onclick = function(){
-            window.location.href = basedir+'/index.html';
+            window.location.href = basedir+'/pages/index.html';
         }
 
         this.logoImg = document.createElement("img");
@@ -33,7 +33,7 @@ class HeaderCreator{
         this.logo.appendChild(this.logoImg);
 
         this.logoTitle = document.createElement("a");
-        this.logoTitle.href = basedir+'/index.html';
+        this.logoTitle.href = basedir;
         this.logoTitle.classList.add('logo-title');
 
         this.headerMenu = document.createElement("div");
