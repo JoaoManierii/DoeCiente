@@ -16,7 +16,7 @@
 
 <body>
     <header class="header">
-       
+
     </header>
     <main>
         <section class="vh-100" style="background-color: lightgray;">
@@ -30,58 +30,61 @@
 
                                         <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Cadastro</p>
 
-                                       <form class="mx-1 mx-md-4">
-        <div class="d-flex flex-row align-items-center mb-4 icon-input-group">
-            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-            <div class="form-outline flex-fill mb-0">
-                <input type="text" id="inputNome" class="form-control" placeholder="Nome Completo" required />
-                <label class="form-label" for="inputNome"></label>
-            </div>
-        </div>
+                                        <form class="mx-1 mx-md-4" id="cadastroForm" method="post" >
+                                            <div class="d-flex flex-row align-items-center mb-4 icon-input-group">
+                                                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="text" id="inputNome" class="form-control"
+                                                        placeholder="Nome Completo" required />
+                                                    <label class="form-label" for="inputNome"></label>
+                                                </div>
+                                            </div>
 
-        <div class="d-flex flex-row align-items-center mb-4 icon-input-group">
-            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-            <div class="form-outline flex-fill mb-0">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email" required />
-                <label class="form-label" for="inputEmail"></label>
-            </div>
-        </div>
+                                            <div class="d-flex flex-row align-items-center mb-4 icon-input-group">
+                                                <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="email" id="inputEmail" class="form-control"
+                                                        placeholder="Email" required />
+                                                    <label class="form-label" for="inputEmail"></label>
+                                                </div>
+                                            </div>
 
-        <div class="d-flex flex-row align-items-center mb-4 icon-input-group">
-            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-            <div class="form-outline flex-fill mb-0">
-                <input type="password" id="senha" class="form-control" placeholder="Senha" required />
-                <label class="form-label" for="senha"></label>
-            </div>
-        </div>
+                                            <div class="d-flex flex-row align-items-center mb-4 icon-input-group">
+                                                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="password" id="senha" class="form-control"
+                                                        placeholder="Senha" required />
+                                                    <label class="form-label" for="senha"></label>
+                                                </div>
+                                            </div>
 
-        <div class="d-flex flex-row align-items-center mb-4 icon-input-group">
-            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-            <div class="form-outline flex-fill mb-0">
-                <input type="password" id="senhad" class="form-control" placeholder="Repita sua senha" required/>
-                <label class="form-label" for="senhad"></label>
-            </div>
-        </div>
+                                            <div class="d-flex flex-row align-items-center mb-4 icon-input-group">
+                                                <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="password" id="senhad" class="form-control"
+                                                        placeholder="Repita sua senha" required />
+                                                    <label class="form-label" for="senhad"></label>
+                                                </div>
+                                            </div>
 
-        <div class="form-check d-flex justify-content-center mb-5">
-            <input class="form-check-input me-2" type="checkbox" value=""
-                id="termos" required />
-            <label class="form-check-label" for="termos">
-                Eu concordo com todos os <a href="#">Termos de Serviço</a>
-            </label>
-        </div>
+                                            <div class="form-check d-flex justify-content-center mb-5">
+                                                <input class="form-check-input me-2" type="checkbox" value="true"
+                                                    id="termos" required />
+                                                <label class="form-check-label" for="termos">
+                                                    Eu concordo com todos os <a href="#">Termos de Serviço</a>
+                                                </label>
+                                            </div>
 
-        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-            <button type="button" class="btn btn-primary btn-lg">Cadastrar</button>
-        </div>
-    </form>
+                                            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                                <button type="button" id="  "   class="btn btn-primary btn-lg">Cadastrar</button>
+                                            </div>
+                                        </form>
 
                                     </div>
                                     <div
                                         class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                                        <img src="../imagens/draw1.png"
-                                            class="img-fluid" alt="logo da cadastro">
+                                        <img src="../imagens/draw1.png" class="img-fluid" alt="logo da cadastro">
                                     </div>
                                 </div>
                             </div>
