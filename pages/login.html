@@ -11,6 +11,7 @@
   <script src="../scripts/commum.js"></script>
   <script src="../scripts/header.js"></script>
   <script src="../scripts/footer.js"></script>
+  <script src="../scripts/login.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
 
   </header>
   <main>
-    <section class="vh-100">
+    <section>
       <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-md-9 col-lg-6 col-xl-5">
@@ -26,11 +27,11 @@
               class="img-fluid" alt="image login">
           </div>
           <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <form>
+            <form id="loginForm" method="post">
               <div class="form-outline mb-4">
-                <input type="email" id="inputEmail" class="form-control form-control-lg"
+                <input type="email" id="email" class="form-control form-control-lg"
                   placeholder="Email" required />
-                <label class="form-label" for="inputEmail"></label>
+                <label class="form-label" for="email"></label>
               </div>
 
               <div class="form-outline mb-3">
@@ -46,7 +47,9 @@
                 </div>
                 <a href="#" class="text-body">Esqueceu a senha ?</a>
               </div>
-
+              <div id="alerta" class="d-flex justify-content-center mb-4 alerta">
+                                            
+              </div>
               <div class="text-center text-lg-start mt-4 pt-2">
                 <button type="button" id="btnLogin" class="btn btn-primary btn-lg">Login</button>
                 <p class="small fw-bold mt-2 pt-1 mb-0 text-dark">Nao tem conta? <a href="cadastro.html"

@@ -1,10 +1,12 @@
 var btnEnviar;
+var erros = [];
 
 document.addEventListener('DOMContentLoaded', () =>{
     btnEnviar = document.querySelector('#btnEnviar');
     btnEnviar.addEventListener('click',(e)=>{
         e.preventDefault();
-        let form = document.querySelector('#cadastroForm');
+        let formData = document.querySelector('#cadastroForm');
+        erros = [];
         if(validaDados()){
             fetch("../php/cadastro.php",{
                 method: "POST",
@@ -12,47 +14,89 @@ document.addEventListener('DOMContentLoaded', () =>{
             })
             .then(response => response.text())
             .then(data => {
+                console.log(data)
                 var jsonData = JSON.parse(data);
                 // Verifique o JSON retornado para saber se o cadastro foi feito
-                if (jsonData.success) {
+                if (jsonData.result) {
                     alert('Cadastro realizado com Sucesso!')
-                    // Redirecione para a tela inicial em caso de sucesso
+                    window.location.href = '../pages/login.html';
                 } else {
                     // Exiba a mensagem de erro retornada no elemento de aviso
+                    novoErro('Erro ao realizar cadastro!' , jsonData.message);
+                    informarErro(erros);
                 }
             })
             .catch((error) => {
-                console.error("Erro ao enviar requisição:", error);
-                // Trate erros de rede ou servidor aqui
+                novoErro("Erro ao enviar requisição:", error);
+                informarErro(erros);
             });
         }else{
-            //mensagem de erro
+            informarErro(erros);
         }
     })
 })
 
 function validaDados(){ 
     let terms = document.querySelector('#termos')
-    if(terms = 'true'){
-        let dadosValidos = true;
-        let mensagemErro = '';
-        let email = document.querySelector('#inputEmail');
-        let nome = document.querySelector('#inputNome');
-        let senha = document.querySelector('#senha');
-        let confSenha = document.querySelector('#senhad');
+    
+    let dadosValidos = true;
+    
+    let email = document.querySelector('#email');
+    let nome = document.querySelector('#nome');
+    let senha = document.querySelector('#senha');
+    let confSenha = document.querySelector('#senhad');
 
-        //adicionar demais vallidações
-        if(senha.textContent != confSenha.textContent){
-            dadosValidos = false;
-            mensagemErro += 'As senhas não coincidem';
-        }
-        
-    }else{
-        informarErro('Para continuar e necessario aceitar os termos.');
+    //valida termos
+    if(!terms.checked){
+        dadosValidos = false;
+        novoErro('Para continuar e necessario aceitar os termos. ');
+    }
+    // Valida nome
+    if (nome.value.length < 3) {
+        dadosValidos = false;
+        novoErro('Nome deve ter pelo menos 3 caracteres.');
+    }
+    // Valida email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+        dadosValidos = false;
+        novoErro('Email não e valido. ');
+    }
+    // Valida senha
+    if(senha.textContent != confSenha.textContent){
+        dadosValidos = false;
+        novoErro('As senhas não coincidem. ');
+    }
+
+    if(senha.textContent.length < 4 ) {
+        dadosValidos = false;
+        novoErro('Senha incorreta. ');
+    }
+    
+    // Valida se há erros
+    if (!dadosValidos) {
         return false;
     }
+    else return dadosValidos;
+
 }
 
-function informarErro(erro){
 
+function novoErro(erro){
+    erros.push(erro);
+}
+
+function informarErro(mensagens){
+    const divAlerta = document.querySelector('#alerta');
+    divAlerta.innerHTML = '';
+
+    let listaErros = document.createElement('ul');
+    
+    mensagens.forEach(mensagem => {
+        let itemErro = document.createElement('li');
+        itemErro.textContent = mensagem;
+        listaErros.appendChild(itemErro);
+    });
+    divAlerta.appendChild(listaErros);
+    divAlerta.style.display = 'block';
 }
