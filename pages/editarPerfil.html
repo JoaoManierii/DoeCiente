@@ -47,21 +47,21 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
                     <div class="card mb-4">
                         <div class="card-header">Detalhes da conta</div>
                         <div class="card-body">
-                            <form>
+                            <form method="post" id="editarPerfil.php">
                                 <div class="mb-3">
-                                    <label class="small mb-1" for="inputNome">Nome Completo</label>
-                                    <input class="form-control" id="inputNome" type="text"
+                                    <label class="small mb-1" for="nome">Nome Completo</label>
+                                    <input class="form-control" id="nome" type="text"
                                         placeholder="Preencha seu nome completo" required>
                                 </div>
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="inputOngNome">Nome da ONG</label>
-                                        <input class="form-control" id="inputOngNome" type="text"
+                                        <label class="small mb-1" for="ong">Nome da ONG</label>
+                                        <input class="form-control" id="ong" type="text"
                                             placeholder="Nome da instituicao" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="inputLocalizacao">Localizacao</label>
-                                        <input class="form-control" id="inputLocalizacao" type="text"
+                                        <label class="small mb-1" for="localizacao">Localizacao</label>
+                                        <input class="form-control" id="localizacao" type="text"
                                             placeholder="CEP" required>
                                     </div>
                                 </div>
@@ -72,13 +72,13 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
                                 </div>
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="inputTelefone">Numero de telefone</label>
-                                        <input class="form-control" id="inputTelefone" type="tel"
+                                        <label class="small mb-1" for="telefone">Numero de telefone</label>
+                                        <input class="form-control" id="telefone" type="tel"
                                             placeholder="Preencha um telefone valido com DDD" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="inputFundacao">Fundacao</label>
-                                        <input class="form-control" id="inputFundacao" type="text" name="Fundacao" placeholder="Data de fundacao da organizacao" required>
+                                        <label class="small mb-1" for="fundacao">Fundacao</label>
+                                        <input class="form-control" id="fundacao" type="text" name="Fundacao" placeholder="Data de fundacao da organizacao" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Sobre</label>
