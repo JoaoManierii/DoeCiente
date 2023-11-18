@@ -19,6 +19,9 @@ try{
     $stmt->execute();
 
     $response = ['message' => 'Usuário cadastrado com sucesso!',
+                'nome' => $nome,
+                'email' => $email,
+                'senha' => $senha,
                 'result' => true];
        
     header('Content-Type: application/json');
