@@ -57,8 +57,6 @@ class HeaderCreator{
 function createMenu(){
     mobileOpenMenu();
     basicMenuitens();
-
-
     if(dados.loggedin)
     {
         return loadMenuUsuario();
@@ -128,16 +126,16 @@ function loadMenuUsuario(){
     logout.textContent = 'Logout';
     logout.classList.add('header-menuItem');
     logout.addEventListener('click', () => {
-        // fetch(basedir+'php/closeSession.php')
-        // .then(response => response.text())
-        // .then(data => {
-        //     dados = JSON.parse(data);
-        //     if (dados.loggedin == false) {
-        //         start();
-        //     } else {
-        //         console.log('Logout não realizado.');
-        //     }
-        // });
+        fetch(basedir+'php/closeSession.php')
+        .then(response => response.text())
+        .then(data => {
+            dados = JSON.parse(data);
+            if (dados.loggedin == false) {
+                start();
+            } else {
+                console.log('Logout não realizado.');
+            }
+        });
         dados.loggedin = false;
         location.href=basedir+"pages/index.html";
     });

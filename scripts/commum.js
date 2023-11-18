@@ -1,13 +1,13 @@
 var basedir = "../";
-var dados = {
-    loggedin: false,
-    username: "Usuário Teste"
-};
-
-
+var dados ;
 
 document.addEventListener("DOMContentLoaded", function () {
-    LoadHeader();
-    createFooter();
+    fetch(basedir + "php/session.php")
+        .then(response => response.text())
+        .then(data => {
+            dados = JSON.parse(data);
+            LoadHeader();
+            createFooter();
+    });
 });
 
