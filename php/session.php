@@ -9,8 +9,7 @@
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         $dadosUsuario = array(
             'loggedin' => true,
-            'nome' => $_SESSION['nome'],
-            'email' => $_SESSION['email'],
+            'usuario' => $_SESSION['usuario']
         );
     } else {
         $dadosUsuario = array(

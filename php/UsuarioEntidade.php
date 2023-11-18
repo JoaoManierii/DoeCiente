@@ -2,16 +2,15 @@
 class UsuarioEntidade {
     private $nome;
     private $email;
+    private $id;
 
-    private $ong;
+    public function getId() {
+        return $this->id;
+    }
 
-    private $localizacao;
-
-    private $telefone;
-
-    private $fundacao;
-
-    private $sobre;
+    public function setId($id) {
+        $this->id= $id;
+    }
 
 
     public function getNome() {
@@ -26,46 +25,6 @@ class UsuarioEntidade {
     }
     public function setEmail($email) {
         $this->email= $email;
-    }
-
-    public function getOng() {
-        return $this->ong;
-    }
-
-    public function setOng($ong) {
-        $this->ong = $ong;
-    }
-
-    public function getLocalizacao() {
-        return $this->localizacao;
-    }
-
-    public function setLocalizacao($localizacao) {
-        $this->localizacao = $localizacao;
-    }
-
-    public function getTelefone() {
-        return $this->telefone;
-    }
-
-    public function setTelefone($telefone) {
-        $this->telefone = $telefone;
-    }
-
-    public function getFundacao() {
-        return $this->fundacao;
-    }
-
-    public function setFundacao($fundacao) {
-        $this->fundacao = $fundacao;
-    }
-
-    public function getSobre() {
-        return $this->sobre;
-    }       
-
-    public function setSobre($sobre) {
-        $this->sobre = $sobre;
     }
 
 }

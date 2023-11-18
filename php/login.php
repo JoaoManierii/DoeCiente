@@ -24,8 +24,9 @@ try{
             }else{
                 $usuario = new UsuarioEntidade();
                 $usuario->setEmail($row["email"]);
-                $usuario->setNome($row["nome"]);           
-                $_SESSION["login"] = "1";
+                $usuario->setNome($row["nome"]);  
+                $usuario->setId($row["id"]);
+                $_SESSION["loggedin"] = true;
                 $_SESSION["usuario"] = $usuario;
                 $response = ['message' => 'Login realizado com sucesso',
                             'result' => true];

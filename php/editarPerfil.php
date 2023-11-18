@@ -1,34 +1,41 @@
 <?php
 require 'conexao.php';
 require 'UsuarioEntidade.php';
+require 'PerfilEntidade.php';
 
 try{
     session_start();
-    if(isset($_POST["email"]) && isset($_POST["nome"]) && isset($_POST["ong"]) && isset($_POST["localizacao"]) && isset($_POST["telefone"]) && isset($_POST["fundacao"]) && isset($_POST["sobre"])) {        
+    $usuario = $_SESSION['usuario'];
+
+    //atualizar tabela usuario
+    if(isset($_POST["email"]) && isset($_POST["nome"])){
+        $nome = htmlspecialchars($_POST["nome"]);
+        $email = htmlspecialchars($_POST["email"]);
+
+    }
+    
+
+    //atualiza tabela instituição
+    if(isset($_POST["ong"]) && isset($_POST["localizacao"]) && isset($_POST["telefone"]) && isset($_POST["fundacao"]) && isset($_POST["sobre"])) {        
         $conn = new Conexao();
 
-        $nome = htmlspecialchars($_POST["nome"]);
         $ong = htmlspecialchars($_POST["ong"]);
         $localizacao = htmlspecialchars($_POST["localizacao"]);
-        $email = htmlspecialchars($_POST["email"]);
         $telefone = htmlspecialchars($_POST["telefone"]);
         $fundacao = htmlspecialchars($_POST["fundacao"]);
         $sobre = htmlspecialchars($_POST["sobre"]);
 
 
-        $sql = "INSERT INTO perfil (nome, ong, localizacao, email, telefone, fundacao, sobre)
-        VALUES ('$nome', '$ong', '$localizacao', '$email', '$telefone', '$fundacao', '$sobre')
-        ON DUPLICATE KEY UPDATE nome='$nome', ong='$ong', localizacao='$localizacao', email='$email', telefone='$telefone', fundacao='$fundacao', sobre='$sobre'";
+        $sql = "INSERT INTO perfil (ong, localizacao, telefone, fundacao, sobre)
+        VALUES ('$ong', '$localizacao', '$telefone', '$fundacao', '$sobre') WHERE id = '$usuario->getId()'";
 
         $stmt = $conn->conexao->prepare( $sql );
 
-        $stmt->bindParam(1, $nome);
-        $stmt->bindParam(2, $ong);
-        $stmt->bindParam(3, $localizacao);
-        $stmt->bindParam(4, $email);
-        $stmt->bindParam(5, $telefone);
-        $stmt->bindParam(6, $fundacao);
-        $stmt->bindParam(7, $sobre);
+        $stmt->bindParam(1, $ong);
+        $stmt->bindParam(2, $localizacao);
+        $stmt->bindParam(3, $telefone);
+        $stmt->bindParam(4, $fundacao);
+        $stmt->bindParam(5, $sobre);
         $resultado = $stmt->execute();
 
         if($stmt->rowCount() == 1) {
