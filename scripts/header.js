@@ -105,7 +105,7 @@ function loadMenuUsuario(){
     
     var tituloUsuario = document.createElement('a');
     tituloUsuario.classList.add('header-menuItem');
-    tituloUsuario.textContent = dados.username;    
+    tituloUsuario.textContent = dados.nome;    
     tituloUsuario.href = basedir+'/pages/editarPerfil.html';
     
     menuUsuario.appendChild(tituloUsuario);

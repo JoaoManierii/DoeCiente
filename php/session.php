@@ -7,9 +7,11 @@
 
     // Verifique se o usuário está logado
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+        $usuario = $_SESSION['usuario'];
         $dadosUsuario = array(
             'loggedin' => true,
-            'usuario' => $_SESSION['usuario']
+            'nome' => $usuario->getNome(),
+            'email' => $usuario->getEmail()
         );
     } else {
         $dadosUsuario = array(
