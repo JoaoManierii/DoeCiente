@@ -1,0 +1,21 @@
+@import 'st/header.css';
+@import 'st/footer.css';
+@import 'st/tema.css';
+
+.form-check-label a {
+    color: black; 
+    font-style: italic;
+}
+
+main{
+    margin: 0%;
+    padding: 10% 10px;
+    background-color: silver    ;
+}
+
+.alerta{
+    margin: 0%;
+    padding: 0% 10px;
+    padding-top: 10px;
+    color: brown;
+}

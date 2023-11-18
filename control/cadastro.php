@@ -13,8 +13,11 @@ try{
     $senha = password_hash($senha, PASSWORD_DEFAULT); // Criptografar a senha
     
     $stmt = $conn->conexao->prepare("INSERT INTO usuarios (nome, email, hashsenha) VALUES (?, ?, ?)");
-    $stmt->execute([$nome, $email, $senha]);
-       
+    $stmt->bindParam(1, $nome);
+    $stmt->bindParam(2, $email);
+    $stmt->bindParam(3, $senha);
+    $stmt->execute();
+
     $response = ['message' => 'Usuário cadastrado com sucesso!',
                 'result' => true];
        

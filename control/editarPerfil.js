@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
 function excluirPerfil(){
     const form = document.querySelector('#formEditarPerfil');
 
-    fetch(basedir + 'php/excluirPerfil.php', {
+    fetch('excluirPerfil.php', {
         method: 'POST',
         body: new FormData(form)
     })
@@ -36,7 +36,8 @@ function excluirPerfil(){
             if (jsonData && typeof jsonData.result !== 'undefined') {
                 if (jsonData.result) {
                     alert('Perfil excluído com sucesso!');
-                    location.href = basedir + 'pages/index.html'; // Substitua pelo redirecionamento desejado após a exclusão
+                    
+                    location.href = '../../control/closeSession.php'; // Substitua pelo redirecionamento desejado após a exclusão
                 } else {
                     alert(jsonData.message);
                 }
@@ -55,7 +56,7 @@ function excluirPerfil(){
 function salvarEditarPerfil(){
     const form = document.querySelector('#formEditarPerfil');
 
-    fetch(basedir + 'php/editarPerfil.php', {
+    fetch('../../control/editarPerfil.php', {
         method: 'POST',
         body: new FormData(form)
     })
@@ -75,7 +76,7 @@ function salvarEditarPerfil(){
             if (jsonData && typeof jsonData.result !== 'undefined') {
                 if (jsonData.result) {
                     alert('Perfil editado com sucesso!');
-                    location.href = basedir + 'pages/perfil.html';
+                    location.href =  + 'editarPerfil.html';
                 } else {
                     alert(jsonData.message);
                 }

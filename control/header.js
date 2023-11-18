@@ -24,16 +24,16 @@ class HeaderCreator{
         this.logo = document.createElement("div");
         this.logo.classList.add("logo");
         this.logo.onclick = function(){
-            window.location.href = basedir+'/pages/index.html';
+            window.location.href = 'index.html';
         }
 
         this.logoImg = document.createElement("img");
-        this.logoImg.src = basedir+'/imagens/logo2.png';
+        this.logoImg.src = '../../imagens/logo2.png';
         this.logoImg.classList.add('logo-img');
         this.logo.appendChild(this.logoImg);
 
         this.logoTitle = document.createElement("a");
-        this.logoTitle.href = basedir;
+        this.logoTitle.href = "index.html";
         this.logoTitle.classList.add('logo-title');
 
         this.headerMenu = document.createElement("div");
@@ -106,7 +106,7 @@ function loadMenuUsuario(){
     var tituloUsuario = document.createElement('a');
     tituloUsuario.classList.add('header-menuItem');
     tituloUsuario.textContent = dados.nome;    
-    tituloUsuario.href = basedir+'/pages/editarPerfil.html';
+    tituloUsuario.href = 'editarPerfil.html';
     
     menuUsuario.appendChild(tituloUsuario);
 
@@ -126,18 +126,7 @@ function loadMenuUsuario(){
     logout.textContent = 'Logout';
     logout.classList.add('header-menuItem');
     logout.addEventListener('click', () => {
-        fetch(basedir+'php/closeSession.php')
-        .then(response => response.text())
-        .then(data => {
-            dados = JSON.parse(data);
-            if (dados.loggedin == false) {
-                start();
-            } else {
-                console.log('Logout não realizado.');
-            }
-        });
-        dados.loggedin = false;
-        location.href=basedir+"pages/index.html";
+        location.href = '../../control/closeSession.php';
     });
 
     contentUsuario.appendChild(logout);
@@ -156,7 +145,7 @@ function loadMenuLogin(){
     var loginitem = document.createElement('a');
     loginitem.classList.add('header-menuItem');
     loginitem.textContent = 'Login';
-    loginitem.href = basedir+'pages/login.html';
+    loginitem.href = 'login.html';
     
     var logincontent = document.createElement('div');
     logincontent.classList.add('header-menucontent');
@@ -170,7 +159,7 @@ function loadMenuLogin(){
     var cadastrese = document.createElement('a');
     cadastrese.classList.add('header-menuItem');
     cadastrese.textContent = 'Cadastre-se';
-    cadastrese.href = basedir+'pages/cadastro.html';
+    cadastrese.href = 'cadastro.html';
     menuCad.appendChild(cadastrese);
     menu.appendChild(menuCad);
 
@@ -184,7 +173,7 @@ function basicMenuitens(){
     var sobre = document.createElement('a');
     sobre.classList.add('header-menuItem');
     sobre.textContent = 'Sobre';
-    sobre.href = basedir+'pages/sobre.html';
+    sobre.href = 'sobre.html';
     menusobre.appendChild(sobre);
     menu.appendChild(menusobre);
 
@@ -193,7 +182,7 @@ function basicMenuitens(){
     var insti = document.createElement('a');
     insti.classList.add('header-menuItem');
     insti.textContent = 'Instituições';
-    insti.href = basedir+'pages/instituicoes.html';
+    insti.href = 'instituicoes.html';
     
     menuInsti.appendChild(insti);
     menu.appendChild(menuInsti);

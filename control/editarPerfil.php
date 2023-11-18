@@ -1,7 +1,7 @@
 <?php
 require 'conexao.php';
-require 'UsuarioEntidade.php';
-require 'PerfilEntidade.php';
+require '../model/UsuarioEntidade.php';
+require '../model/PerfilEntidade.php';
 
 try{
     session_start();

@@ -12,22 +12,37 @@ document.addEventListener('DOMContentLoaded', () =>{
                 method: "POST",
                 body: formData,
             })
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                console.log('response: ' , response);
+                return response.text(); // Use text() para obter o corpo da resposta
+            })
             .then(data => {
-                console.log(data)
-                var jsonData = JSON.parse(data);
-                // Verifique o JSON retornado para saber se o cadastro foi feito
-                if (jsonData.result) {
-                    alert('Cadastro realizado com Sucesso!')
-                    window.location.href = '../pages/login.html';
+                console.log('data:  ',data);
+                if (data.trim() !== '') {
+                    var jsonData = JSON.parse(data);
+                    if (jsonData && typeof jsonData.result !== 'undefined') {
+                        // Verifique o JSON retornado para saber se o cadastro foi feito
+                        if (jsonData.result) {
+                            alert('Cadastro realizado com Sucesso!')
+                            window.location.href = '../pages/login.html';
+                        } else {
+                            // Exiba a mensagem de erro retornada no elemento de aviso
+                            novoErro('Erro ao realizar cadastro!' , jsonData.message);
+                            informarErro(erros);
+                        }
+                    } else {
+                        console.error('Resposta do servidor não contém um JSON válido.');
+                    }
                 } else {
-                    // Exiba a mensagem de erro retornada no elemento de aviso
-                    novoErro('Erro ao realizar cadastro!' , jsonData.message);
-                    informarErro(erros);
+                    console.error('Resposta do servidor está vazia.');
                 }
             })
             .catch((error) => {
                 novoErro("Erro ao enviar requisição:", error);
+                console.error('Houve um problema com a operação de cadastro:', error);
                 informarErro(erros);
             });
         }else{
@@ -63,12 +78,12 @@ function validaDados(){
         novoErro('Email não e valido. ');
     }
     // Valida senha
-    if(senha.textContent != confSenha.textContent){
+    if(senha.value != confSenha.value){
         dadosValidos = false;
         novoErro('As senhas não coincidem. ');
     }
 
-    if(senha.textContent.length < 4 ) {
+    if(senha.value.length < 4 ) {
         dadosValidos = false;
         novoErro('Senha incorreta. ');
     }

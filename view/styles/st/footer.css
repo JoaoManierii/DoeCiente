@@ -1,0 +1,33 @@
+@import 'tema.css';
+
+footer{
+    margin-top: 20px;
+    padding: 5px 10px;
+    background-color: var(--fundo-2);
+    color:var(--font-title-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-content{
+    justify-content: space-between;
+    
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.footer-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.footer-content > a{
+    color: var(--font-title-color);
+    text-decoration: none;
+    font-size: 1rem;
+    margin-left: 20px;
+}
