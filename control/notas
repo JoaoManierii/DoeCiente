@@ -1,0 +1,34 @@
+js para direcionar ou chamar algum arquivo segue o principio que a pasta atual quando aberto o site no navegador e do html.
+
+por tanto
+
+estara em execução na pasta 
+
+RAIZ/view/pages/arquivo.html
+
+quero direcionar para outro arquivo .html basta escrever o nome do outro arquivo
+
+"outroArquivo.html"
+
+caso quero acionar um php dentro do js 
+
+"../../control/nomearquivo.php"
+
+arquivos php para chamar outro arquivo php 
+
+caso o outro arquivo esteja dentro da pasta control: 
+
+"arquivo.php"
+
+
+caso esteja em model 
+
+"../model/arquivo.php"
+
+
+caso deseja direcionar a outra pagina
+
+"../view/pages/nome.html"
+
+##
+Possiveis erros de uso do link nos casos de php. 
