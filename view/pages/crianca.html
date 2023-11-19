@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doar</title>
+    <link rel="stylesheet" href="../styles/crianca.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="../../control/header.js"></script>
+    <script src="../../control/footer.js"></script>
+</head>
+
+<body>
+    <header class="header">
+
+    </header>
+    <main>
+        <div class="container-fluid px-0" id="bg-div">
+            <div class="row justify-content-center">
+                <img src="../../imagens/ayrtonSenna.jpg" alt="">
+                <h3 class="mt-0 mb-4 text-center">Instituto AyrtonSenna</h3>
+                <p>"O Instituto Ayrton Senna é uma organização dedicada a melhorar a qualidade da educação no Brasil.
+                    Fundado em homenagem ao lendário piloto de Fórmula 1, Ayrton Senna, o instituto busca promover o
+                    desenvolvimento de crianças e jovens por meio de programas educacionais inovadores.",</p>
+            </div>
+        </div>
+
+        <div class="container-fluid px-0" id="bg-div">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-12">
+                    <div class="card card0">
+                        <div class="d-flex" id="wrapper">
+                            <div class="bg-light border-right" id="sidebar-wrapper">
+                                <div class="sidebar-heading pt-5 pb-4"><strong>Pagar com</strong></div>
+                                <ul class="nav nav-tabs flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tab1" data-toggle="tab" href="#menu1">Deposito</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="tab2" data-toggle="tab" href="#menu2">Cartao de
+                                            Credito</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tab3" data-toggle="tab" href="#menu3">QR CODE</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="page-content-wrapper">
+                                <div class="row pt-3" id="border-btm">
+                                    <div class="col-4">
+                                        <button class="btn btn-success mt-4 ml-3 mb-3" id="menu-toggle">
+                                            <div class="bar4"></div>
+                                            <div class="bar4"></div>
+                                            <div class="bar4"></div>
+                                        </button>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="row justify-content-right">
+                                            <div class="col-12">
+                                                <p class="mb-0 mr-4 mt-4 text-right">ismael@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-right">
+                                            <div class="col-12">
+                                                <p class="mb-0 mr-4 text-right">Pagar <span class="top-highlight">R$
+                                                        100</span> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="text-center" id="test">Doacao</div>
+                                </div>
+                                <div class="tab-content">
+                                    <div id="menu1" class="tab-pane">
+                                        <div class="row justify-content-center">
+                                            <div class="col-11">
+                                                <div class="form-card">
+                                                    <h3 class="mt-0 mb-4 text-center">Deposito Bancario</h3>
+                                                    <form onsubmit="event.preventDefault()">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="input-group">
+                                                                    <input type="text" id="bk_nm"
+                                                                        placeholder="Bradesco">
+                                                                    <label>Nome do Banco</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="input-group">
+                                                                    <input type="text" name="ben_nm" id="ben-nm"
+                                                                        placeholder="Rafael Araujo">
+                                                                    <label>Nome</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="input-group">
+                                                                    <input type="text" name="scode"
+                                                                        placeholder="50635485-5" class="placeicon"
+                                                                        minlength="8" maxlength="11">
+                                                                    <label>Conta corrente</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <input type="submit" value="Pagar R$ 100"
+                                                                    class="btn btn-success placeicon">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="menu2" class="tab-pane active">
+                                        <div class="row justify-content-center">
+                                            <div class="col-11">
+                                                <div class="form-card">
+                                                    <h3 class="mt-0 mb-4 text-center">Detalhes do cartao</h3>
+                                                    <form onsubmit="event.preventDefault()">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="input-group">
+                                                                    <input type="text" id="cr_no"
+                                                                        placeholder="0000 0000 0000 0000" minlength="19"
+                                                                        maxlength="19">
+                                                                    <label>Numero do cartao</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="input-group">
+                                                                    <input type="text" name="exp" id="exp"
+                                                                        placeholder="MM/AA" minlength="5" maxlength="5">
+                                                                    <label>Expiracao</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="input-group">
+                                                                    <input type="password" name="cvcpwd"
+                                                                        placeholder="&#9679;&#9679;&#9679;"
+                                                                        class="placeicon" minlength="3" maxlength="3">
+                                                                    <label>CVV</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <input type="submit" value="Valor R$ 100"
+                                                                    class="btn btn-success placeicon">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="menu3" class="tab-pane">
+                                        <div class="row justify-content-center">
+                                            <div class="col-11">
+                                                <h3 class="mt-0 mb-4 text-center">Leia o QR para realizar o pagamento
+                                                </h3>
+                                                <div class="row justify-content-center">
+                                                    <div id="qr">
+                                                        <img src="https://i.imgur.com/DD4Npfw.jpg" width="200px"
+                                                            height="200px">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $("#menu-toggle").click(function (e) {
+                    e.preventDefault();
+                    $("#wrapper").toggleClass("toggled");
+                });
+            });
+        </script>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>
