@@ -1,0 +1,57 @@
+/* Estilos da main */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para a seção "identificacao" */
+.identificacao {
+    margin-bottom: 20px;
+}
+
+.identificacao h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.identificacao p {
+    margin: 0;
+}
+
+/* Estilos para a seção "qrcode" */
+.qrcode {
+    background-color: #f0f0f0;
+    height: 200px;
+    /* Adicione estilos específicos conforme necessário */
+}
+
+/* Estilos para a seção "Sobre" */
+.Sobre h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.Sobre p {
+    margin-bottom: 10px;
+}
+
+/* Estilos do footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Consulta de mídia para ajustar o layout em telas menores */
+@media screen and (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+
+    .qrcode {
+        height: 150px;
+    }
+}

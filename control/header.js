@@ -28,12 +28,12 @@ class HeaderCreator{
         }
 
         this.logoImg = document.createElement("img");
-        this.logoImg.src = '../../imagens/logo2.png';
+        this.logoImg.src = '../imagens/logo2.png';
         this.logoImg.classList.add('logo-img');
         this.logo.appendChild(this.logoImg);
 
         this.logoTitle = document.createElement("a");
-        this.logoTitle.href = "index.html";
+        this.logoTitle.href = "../view/pages/index.html";
         this.logoTitle.classList.add('logo-title');
 
         this.headerMenu = document.createElement("div");
@@ -145,7 +145,7 @@ function loadMenuLogin(){
     var loginitem = document.createElement('a');
     loginitem.classList.add('header-menuItem');
     loginitem.textContent = 'Login';
-    loginitem.href = 'login.html';
+    loginitem.href = '../view/pages/login.html';
     
     var logincontent = document.createElement('div');
     logincontent.classList.add('header-menucontent');

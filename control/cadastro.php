@@ -1,6 +1,8 @@
 <?php
 require 'conexao.php';
 // Conexão com o banco de dados
+var_dump($_POST);
+
 try{
 
     $conn = new Conexao();    
@@ -13,9 +15,9 @@ try{
     $senha = password_hash($senha, PASSWORD_DEFAULT); // Criptografar a senha
     
     $stmt = $conn->conexao->prepare("INSERT INTO usuarios (nome, email, hashsenha) VALUES (?, ?, ?)");
-    $stmt->bindParam(1, $nome);
-    $stmt->bindParam(2, $email);
-    $stmt->bindParam(3, $senha);
+    $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+    $stmt->bindValue(':senha', $senha, PDO::PARAM_STR);
     $stmt->execute();
 
     $response = ['message' => 'Usuário cadastrado com sucesso!',

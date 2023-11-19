@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     btnEnviar = document.querySelector('#btnEnviar');
     btnEnviar.addEventListener('click',(e)=>{
         e.preventDefault();
-        let formData = document.querySelector('#cadastroForm');
+        let formData = new FormData(document.querySelector('#cadastroForm'));
+        console.log("Form Data:", formData); // Adicione esta linha para depuração
         erros = [];
         if(validaDados()){
             fetch("cadastro.php",{
