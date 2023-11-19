@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         //realizar tentativa de login
         let formData = document.querySelector('#loginForm');
         if(validarEmailSenha(emailInput,senhaInput)){
-            fetch('login.php',{
+            fetch('/control/login.php',{
                 method: "POST",
                 body: formData,
             })
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded',()=>{
                 // Verifique o JSON retornado para saber se o cadastro foi feito
                 if (jsonData.result) {
                     //alert('Login realizado com Sucesso!')
-                    window.location.href = '..view/pages/index.html';
+                    window.location.href = '/view/pages/editarPerfil.html';
                 } else {
                     // Exiba a mensagem de erro retornada no elemento de aviso
                     novoErro('Erro ao realizar login!' , jsonData.message);

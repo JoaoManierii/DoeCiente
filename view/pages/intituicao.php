@@ -1,5 +1,5 @@
 <?php
-require "../../control/conexao.php";
+require "/control/conexao.php";
 
 $conn = new Conexao();
 
@@ -62,11 +62,11 @@ if (isset($_GET["id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/intituicao.css">
-    <script src="../../control/commum.js"></script>
-    <script src="../../control/header.js"></script>
-    <script src="../../control/footer.js"></script>
-    <script src="../../control/pixGenerator.js"></script>
+    <link rel="stylesheet" href="/view/styles/intituicao.css">
+    <script src="/control/commum.js"></script>
+    <script src="/control/header.js"></script>
+    <script src="/control/footer.js"></script>
+    <script src="/control/pixGenerator.js"></script>
     <title>Document</title>
 </head>
 <body>  

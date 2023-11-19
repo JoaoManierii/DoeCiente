@@ -5,47 +5,48 @@ document.addEventListener('DOMContentLoaded', () =>{
     btnEnviar = document.querySelector('#btnEnviar');
     btnEnviar.addEventListener('click',(e)=>{
         e.preventDefault();
-        let formData = new FormData(document.querySelector('#cadastroForm'));
-        console.log("Form Data:", formData); // Adicione esta linha para depuração
         erros = [];
         if(validaDados()){
-            fetch("cadastro.php",{
+            let nome = document.querySelector('#nome');
+            let email = document.querySelector('#email');
+            let senha = document.querySelector('#senha');
+            let formData = new FormData();
+            formData.append('nome', nome.value);
+            formData.append('email', email.value);
+            formData.append('senha', senha.value);
+            fetch("/control/cadastro.php",{
                 method: "POST",
                 body: formData,
             })
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                console.log('response: ' , response);
-                return response.text(); // Use text() para obter o corpo da resposta
+                return response.text();
             })
             .then(data => {
-                console.log('data:  ',data);
+                console.log(data);
                 if (data.trim() !== '') {
                     var jsonData = JSON.parse(data);
-                    if (jsonData && typeof jsonData.result !== 'undefined') {
+                    // let bol = jsonData.result;
+                    // console.log(bol);
+                    if (jsonData.result) {
                         // Verifique o JSON retornado para saber se o cadastro foi feito
                         if (jsonData.result) {
                             alert('Cadastro realizado com Sucesso!')
-                            window.location.href = 'login.html';
+                            window.location.href = '/view/pages/login.html';
                         } else {
                             // Exiba a mensagem de erro retornada no elemento de aviso
                             novoErro('Erro ao realizar cadastro!' , jsonData.message);
                             informarErro(erros);
                         }
                     } else {
-                        console.error('Resposta do servidor não contém um JSON válido.');
+                        novoErro('Erro ao realizar cadastro!' , jsonData.message);
+                        informarErro(erros);
                     }
                 } else {
+                    novoErro('Erro ao realizar cadastro! tente novamente mais tarde.');
+                    informarErro(erros);
                     console.error('Resposta do servidor está vazia.');
                 }
             })
-            .catch((error) => {
-                novoErro("Erro ao enviar requisição:", error);
-                console.error('Houve um problema com a operação de cadastro:', error);
-                informarErro(erros);
-            });
         }else{
             informarErro(erros);
         }

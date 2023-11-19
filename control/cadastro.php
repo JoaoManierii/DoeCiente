@@ -1,9 +1,7 @@
 <?php
 require 'conexao.php';
 // Conexão com o banco de dados
-var_dump($_POST);
-
-try{
+try {
 
     $conn = new Conexao();    
     
@@ -14,23 +12,29 @@ try{
     
     $senha = password_hash($senha, PASSWORD_DEFAULT); // Criptografar a senha
     
-    $stmt = $conn->conexao->prepare("INSERT INTO usuarios (nome, email, hashsenha) VALUES (?, ?, ?)");
-    $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
-    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-    $stmt->bindValue(':senha', $senha, PDO::PARAM_STR);
+    $stmt = $conn->conexao->prepare("INSERT INTO usuarios (nome, email, hashsenha) VALUES (:nome, :email, :senha)");
+
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':senha', $senha);
+
     $stmt->execute();
 
-    $response = ['message' => 'Usuário cadastrado com sucesso!',
-                'nome' => $nome,
-                'email' => $email,
-                'senha' => $senha,
-                'result' => true];
+    $resp= [
+        'message' => 'Usuário cadastrado com sucesso!',
+        'result' => true
+    ];
+
+    $conn->fecharConexao();
        
     header('Content-Type: application/json');
-    echo json_encode($response);
-} catch (PDOException $e) {
-    $response = ['error' => $e->getMessage(), 'result' => false];
+    echo json_encode($resp);
     
+} catch (PDOException $e) {
+    $conn->fecharConexao();
+    $response = [
+        'error' => $e->getMessage(),
+        'result' => false];
     header('Content-Type: application/json');
     echo json_encode($response);
 }

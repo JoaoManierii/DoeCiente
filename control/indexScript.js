@@ -7,7 +7,7 @@ var comentarios;
 document.addEventListener("DOMContentLoaded", () =>{
     banners = document.querySelectorAll(".banner");
     comentarios = loadComentarios();
-    addComentarios();
+    // addComentarios();
     setInterval(nextBanner, 4000);
 
 });

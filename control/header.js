@@ -24,16 +24,16 @@ class HeaderCreator{
         this.logo = document.createElement("div");
         this.logo.classList.add("logo");
         this.logo.onclick = function(){
-            window.location.href = 'index.html';
+            window.location.href = '/view/pages/index.html';
         }
 
         this.logoImg = document.createElement("img");
-        this.logoImg.src = '../imagens/logo2.png';
+        this.logoImg.src = '/imagens/logo2.png';
         this.logoImg.classList.add('logo-img');
         this.logo.appendChild(this.logoImg);
 
         this.logoTitle = document.createElement("a");
-        this.logoTitle.href = "../view/pages/index.html";
+        this.logoTitle.href = "/view/pages/index.html";
         this.logoTitle.classList.add('logo-title');
 
         this.headerMenu = document.createElement("div");
@@ -106,7 +106,7 @@ function loadMenuUsuario(){
     var tituloUsuario = document.createElement('a');
     tituloUsuario.classList.add('header-menuItem');
     tituloUsuario.textContent = dados.nome;    
-    tituloUsuario.href = 'editarPerfil.html';
+    tituloUsuario.href = '/view/pages/editarPerfil.html';
     
     menuUsuario.appendChild(tituloUsuario);
 
@@ -126,7 +126,7 @@ function loadMenuUsuario(){
     logout.textContent = 'Logout';
     logout.classList.add('header-menuItem');
     logout.addEventListener('click', () => {
-        location.href = '../../control/closeSession.php';
+        location.href = '/control/closeSession.php';
     });
 
     contentUsuario.appendChild(logout);
@@ -145,7 +145,7 @@ function loadMenuLogin(){
     var loginitem = document.createElement('a');
     loginitem.classList.add('header-menuItem');
     loginitem.textContent = 'Login';
-    loginitem.href = '../view/pages/login.html';
+    loginitem.href = '/view/pages/login.html';
     
     var logincontent = document.createElement('div');
     logincontent.classList.add('header-menucontent');
@@ -159,7 +159,7 @@ function loadMenuLogin(){
     var cadastrese = document.createElement('a');
     cadastrese.classList.add('header-menuItem');
     cadastrese.textContent = 'Cadastre-se';
-    cadastrese.href = 'cadastro.html';
+    cadastrese.href = '/view/pages/cadastro.html';
     menuCad.appendChild(cadastrese);
     menu.appendChild(menuCad);
 
@@ -173,7 +173,7 @@ function basicMenuitens(){
     var sobre = document.createElement('a');
     sobre.classList.add('header-menuItem');
     sobre.textContent = 'Sobre';
-    sobre.href = 'sobre.html';
+    sobre.href = '/view/pages/sobre.html';
     menusobre.appendChild(sobre);
     menu.appendChild(menusobre);
 
@@ -182,7 +182,7 @@ function basicMenuitens(){
     var insti = document.createElement('a');
     insti.classList.add('header-menuItem');
     insti.textContent = 'Instituições';
-    insti.href = 'instituicoes.html';
+    insti.href = '/view/pages/instituicoes.html';
     
     menuInsti.appendChild(insti);
     menu.appendChild(menuInsti);
