@@ -106,12 +106,14 @@ function loadMenuUsuario(){
     var tituloUsuario = document.createElement('a');
     tituloUsuario.classList.add('header-menuItem');
     tituloUsuario.textContent = dados.nome;    
-    tituloUsuario.href = '/view/pages/editarPerfil.html';
+    // tituloUsuario.href = '/view/pages/editarPerfil.html';
     
     menuUsuario.appendChild(tituloUsuario);
-
+    
     var contentUsuario = document.createElement('div')
     contentUsuario.classList.add('header-menucontent');
+    contentUsuario.style.display = 'flex';
+    contentUsuario.style.flexDirection = 'column';
 
 
     // menu.addEventListener('mouseover', function () {
@@ -130,6 +132,17 @@ function loadMenuUsuario(){
     });
 
     contentUsuario.appendChild(logout);
+
+
+    var editarPerfil = document.createElement('a');
+    editarPerfil.textContent = 'Perfil';
+    editarPerfil.classList.add('header-menuItem');
+    editarPerfil.addEventListener('click', () => {
+        location.href = '/view/pages/editarPerfil.html';
+    });
+
+    contentUsuario.appendChild(editarPerfil);
+
     menuUsuario.appendChild(contentUsuario);
 
     menu.appendChild(menuUsuario);

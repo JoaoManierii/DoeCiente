@@ -13,24 +13,25 @@ document.addEventListener("DOMContentLoaded", () =>{
 });
 
 function fetchInstitutions() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '../../control/buscaInstituicoes.php', true);
-
-    xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 400) {
-            cardInfos = JSON.parse(xhr.responseText);
-            console.log(cardInfos);
-            cardCreator();
-        } else {
-            console.error('Error: ' + xhr.status);
+    fetch('/control/buscaInstituicoes.php')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-    };
-
-    xhr.onerror = function() {
-        console.error('Request failed');
-    };
-
-    xhr.send();
+        return response.text(); // Use text() para obter o corpo da resposta
+    })
+    .then(data => {
+        try {
+            console.log(data);
+            let jsonData = JSON.parse(data); 
+            cardInfos = jsonData.data; 
+            cardCreator(); 
+        }
+        catch (error) {
+            console.log(error);
+        }
+    })
+    .catch(error => console.error('Erro ao buscar as instituições:', error));
 }
 
 
