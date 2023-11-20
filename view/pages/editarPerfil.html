@@ -21,28 +21,6 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
     <main>
         <div class="container-xl px-4 mt-4">
             <div class="row">
-                <div class="col-xl-4">
-                    <div class="card mb-4 mb-xl-0">
-                        <div class="card-header">Foto de perfil</div>
-                        <div class="card-body text-center">
-                            <img class="img-account-profile mb-2"
-                                src="/imagens/perfil.jpeg" alt="">
-                            <div class="small font-italic text-muted mb-4">JPG ou PNG</div>
-                            <button class="btn btn-primary" type="button">Enviar nova foto</button>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="card mb-4 mb-xl-0">
-                        <div class="card-header">QR CODE DOACAO</div>
-                        <div class="card-body text-center">
-                            <img class="img-account-profile mb-2"
-                                src="/imagens/qrcode.jpg" alt="">
-                            <div class="small font-italic text-muted mb-4">JPG ou PNG</div>
-                           
-                            <button class="btn btn-primary" type="button" >Enviar nova foto</button>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-xl-8">
                     <div class="card mb-4">
                         <div class="card-header">Detalhes da conta</div>
@@ -60,15 +38,20 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
                                             placeholder="Nome da instituicao" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="localizacao">Localizacao</label>
-                                        <input class="form-control" id="localizacao" type="text"
+                                        <label class="small mb-1" for="endereco">Localizacao</label>
+                                        <input class="form-control" id="endereco" type="text"
                                             placeholder="CEP" required>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="small mb-1" for="inputEmail">Endereço Email</label>
-                                    <input class="form-control" id="inputEmail" type="email"
+                                    <label class="small mb-1" for="email">Endereço Email</label>
+                                    <input class="form-control" id="email" type="email"
                                         placeholder="Preencha o email cadastrado" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="small mb-1" for="email">Chave Pix</label>
+                                    <input class="form-control" id="chavepix" type="email"
+                                        placeholder="Preencha a chave Pix" required>
                                 </div>
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-6">
@@ -86,8 +69,17 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
                                       </div>
                                 </div>
                                 <button id="btnSubmit" class="btn btn-primary" type="button">Salvar Alteracoes</button>
-                                <button id="btnExcluir" class="btn btn-danger" type="button">Excluir Conta</button>
+                                <button onclick="openDialog()" id="btnExcluir" class="btn btn-danger" type="button">Excluir Conta</button>
                             </form>
+                            <div id="customDialog" class="dialog">
+                                <div class="dialog-content">
+                                  <h3>Digite sua Senha e Confirme para <strong>EXCLUIR A SUA CONTA</strong> ou aperte Cancelar.</h3>
+                                  <label for="senha">Digite algo:</label>
+                                  <input type="text" id="senha">
+                                  <button onclick="confirmDialog()">Confirmar</button>
+                                  <button onclick="closeDialog()">Cancelar</button>
+                                </div>
+                              </div>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,8 @@
 <?php
-   
+    require "../model/UsuarioEntidade.php";
     // Inicie ou retome a sessão
     session_start();
+
 
     $dadosUsuario = array();
 

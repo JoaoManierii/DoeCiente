@@ -1,51 +1,57 @@
 <?php
 require 'conexao.php';
-require 'UsuarioEntidade.php';
+require '../model/UsuarioEntidade.php';
 
-try{
+try {
     session_start();
-    if(isset($_POST["email"]) && isset($_POST["senha"])) {        
-        $conn = new Conexao();
+    $conn = new Conexao();
+    
+    $email = htmlspecialchars($_POST["email"]);
+    $senha = $_POST["senha"];
 
-        $senha = htmlspecialchars($_POST["senha"]);
-        $email = htmlspecialchars($_POST["email"]);
-
-        $sql = "SELECT * FROM usuarios WHERE cpf = ?";
-        $stmt = $conn->conexao->prepare( $sql );
-
-        $stmt->bindParam(1, $email);
-        $resultado = $stmt->execute();
-
-        if($stmt->rowCount() == 1) {
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if(!password_verify($senha, $row["senha"])) {
-                $response = ['message' => 'Usuario e/ou Senha Incorretos',
-                            'result' => false];
-            }else{
-                $usuario = new UsuarioEntidade();
-                $usuario->setEmail($row["email"]);
-                $usuario->setNome($row["nome"]);  
-                $usuario->setId($row["id"]);
-                $_SESSION["loggedin"] = true;
-                $_SESSION["usuario"] = $usuario;
-                $response = ['message' => 'Login realizado com sucesso',
-                            'result' => true];
-            }
+    $sql = "SELECT * FROM usuarios WHERE email = :email";
+    $stmt = $conn->conexao->prepare($sql);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($row) {
+        $bol = password_verify($senha, $row["hashsenha"]);
+        if ($bol) {
+            $usuario = new UsuarioEntidade();
+            $usuario->setEmail($row["email"]);
+            $usuario->setNome($row["nome"]);
+            $usuario->setId($row["id"]);
+    
+            $_SESSION["loggedin"] = true;
+            $_SESSION["usuario"] = $usuario;
+    
+            $response = ['message' => 'Login realizado com sucesso', 'result' => true];
             header('Content-Type: application/json');
             echo json_encode($response);
-        }
-        else {
-            $response = ['message' => 'Usuario e/ou Senha Incorretos',
-                            'result' => false];
+            $conn->fecharConexao();
+            exit();
+        } else {
+            $response = ['message' =>'Senha incorreta', 'result' => false];
             header('Content-Type: application/json');
             echo json_encode($response);
+            $conn->fecharConexao();
+            exit();
         }
-        
+    } else {
+        $response = ['message' => 'Usuário não encontrado', 'result' => false];
+        header('Content-Type: application/json');
+        echo json_encode($response);
+        $conn->fecharConexao();
+        exit();
     }
-}catch(PDOException $e){
+} catch (PDOException $e) {
     $response = ['message' => $e->getMessage(), 'result' => false];
     header('Content-Type: application/json');
     echo json_encode($response);
-}
+    $conn->fecharConexao();
 
+    exit();
+
+}
 ?>

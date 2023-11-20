@@ -12,9 +12,11 @@ document.addEventListener('DOMContentLoaded',()=>{
         const emailInput = document.querySelector('#email');
         const senhaInput = document.querySelector('#senha');
         //realizar tentativa de login
-        let formData = document.querySelector('#loginForm');
         if(validarEmailSenha(emailInput,senhaInput)){
-            fetch('/control/login.php',{
+            let formData = new FormData();
+            formData.append('email', emailInput.value);
+            formData.append('senha', senhaInput.value);
+            fetch("/control/login.php",{
                 method: "POST",
                 body: formData,
             })
@@ -22,25 +24,29 @@ document.addEventListener('DOMContentLoaded',()=>{
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                console.log('response: ' , response);
                 return response.text(); // Use text() para obter o corpo da resposta
             })
             .then(data => {
-                var jsonData = JSON.parse(data);
-                console.log(data)
-                // Verifique o JSON retornado para saber se o cadastro foi feito
-                if (jsonData.result) {
-                    //alert('Login realizado com Sucesso!')
-                    window.location.href = '/view/pages/editarPerfil.html';
-                } else {
-                    // Exiba a mensagem de erro retornada no elemento de aviso
-                    novoErro('Erro ao realizar login!' , jsonData.message);
+                try {
+                    var jsonData = JSON.parse(data);
+                    console.log(jsonData);
+        
+                    if (jsonData.result) {
+                        window.location.href = '/view/pages/editarPerfil.html';
+                    } else {
+                        novoErro('Erro ao realizar login!', jsonData.message);
+                        informarErro(erros);
+                    }
+                } catch (error) {
+                    novoErro('Erro ao processar a resposta do servidor.');
                     informarErro(erros);
+                    console.log(error);
                 }
             })
-            .catch((error) => {
-                novoErro("Erro ao enviar requisição:", error);
+            .catch((er) => {
+                novoErro("Erro ao enviar solicitaçãp tente novamente mais tarde");
                 informarErro(erros);
+                console.log(er);
             });
         }else{
             informarErro(erros);
